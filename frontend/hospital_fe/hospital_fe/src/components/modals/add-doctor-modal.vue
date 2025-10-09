@@ -1,0 +1,60 @@
+<template>
+    <div class="modal">
+        <div class="modal-inner">
+            <h2>Doktor Ekle</h2>
+            <form>
+                <label for="name">İsim:</label>
+                <input type="text" v-model="addedDoctor.name" id="name" name="name"><br><br>
+                <label for="surname">Soyisim:</label>
+                <input type="text" v-model="addedDoctor.surname" id="surname" name="surname"><br><br>
+                <label for="nationalityId">Tc Kimlik No:</label>
+                <input type="text" v-model="addedDoctor.nationalityId" id="nationalityId" name="nationalityId"><br><br>
+                <label for="phoneNumber">Telefon No:</label>
+                <input type="text" v-model="addedDoctor.phoneNumber" id="phoneNumber" name="phoneNumber"><br><br>
+                <button @click="$emit('createDoctor', addedDoctor)">Ekle</button>
+                <button @click="$emit('close')">Kapat</button>
+            </form>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            addedDoctor:
+            {
+                name: '',
+                surname: '',
+                nationalityId: '',
+                phoneNumber: ''
+            }
+        }
+    }
+}
+</script>
+
+<style>
+.root {
+    position: relative;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-inner {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+</style>
