@@ -12,7 +12,7 @@ export default {
   name: "App",
   data() {
     return {
-      doctors: [],
+      doctors: [], //denemeSehiladsasd
       patients: [],
       showAddDoctorPopup: false,
       showUpdateDoctorPopup: false,
