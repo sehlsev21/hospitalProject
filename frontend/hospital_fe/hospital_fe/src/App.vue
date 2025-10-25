@@ -12,8 +12,9 @@ export default {
   name: "App",
   data() {
     return {
-      doctors: [], //denemeSehiladsasd
-      patients: [],
+
+      doctors: [ ],
+      patients: [ ],
       showAddDoctorPopup: false,
       showUpdateDoctorPopup: false,
       showAddPatientPopup: false,
@@ -44,10 +45,16 @@ export default {
     createDoctor(addedDoctor) {
       console.log("createDoctor çalıştı");
       DoctorService.createDoctor(addedDoctor);
+      DoctorService.getAllDoctors().then((json) => {
+        this.doctors = json;
+      });
     },
     deleteDoctor(id) {
       console.log("deleteDoctor çalıştı");
       DoctorService.deleteDoctor(id);
+      DoctorService.getAllDoctors().then((json) => {
+        this.doctors = json;
+      });
     },
     updateDoctor() {
       console.log("updateDoctor çalıştı");

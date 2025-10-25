@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueform/multiselect": "^2.6.11",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vue3-select2-component": "^0.1.7"
