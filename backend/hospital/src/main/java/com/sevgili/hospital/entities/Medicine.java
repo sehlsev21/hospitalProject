@@ -6,8 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
-@Table(name="medicines")
+@Table(name="medicine")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,10 +17,14 @@ import lombok.NoArgsConstructor;
 public class Medicine {
 
     @Id
-    @Column(name="id")
+    @Column(name="medicine_id")
     private int id;
 
     @Column(name="name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "peak_id")
+    private Peak peak;
 
 }

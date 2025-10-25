@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 @Entity
-@Table(name="patients")
+@Table(name="patient")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +15,7 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="patient_id")
-    private int patientId;
+    private int id;
 
     @NonNull
     @NotEmpty

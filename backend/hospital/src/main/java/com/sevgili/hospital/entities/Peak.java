@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name="peaks")
+@Table(name="peak")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,13 +17,13 @@ public class Peak {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="peak_id")
     private int id;
 
     @OneToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="appointment_id")
     private Appointment appointment;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "peak")
     private List<Medicine> medicines;
 }
